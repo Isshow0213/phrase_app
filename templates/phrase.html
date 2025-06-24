@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>フレーズ</title>
+</head>
+<body>
+    {% for p in phrases %}
+        <div>
+            <strong>{{ p.jp }}</strong>
+            <br>
+            {{ p.en }} / {{p.ne}}
+            {% if p.audio_filename %}
+                <br>
+                <audio controls>
+                    <source src="{{ url_for('static', filename='audio/' ~ p.audio_filename) }}" type="audio/mpeg">
+                    お使いのブラウザはオーディオをサポートしていません。
+                </audio>
+            {% endif %}
+        </div>
+    {% endfor %}
+</body>
+</html>

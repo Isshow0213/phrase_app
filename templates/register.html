@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>新規ユーザー登録</h1>
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flash-messages">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="form-container">
+            <label>
+                ユーザー名：
+                <input type="text" name="username" required>
+            </label>
+
+            <label>
+                パスワード：
+                <input type="password" name="password" required>
+            </label>
+
+            <button type="submit">登録</button>
+        </form>
+
+        <div class="header-actions">
+            <a href="{{ url_for('login') }}">既にアカウントをお持ちの方はこちら</a>
+        </div>
+    </main>
+</body>
+</html>

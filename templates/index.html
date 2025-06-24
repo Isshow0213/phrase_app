@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>フレーズ一覧</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <a href="{{ url_for('index') }}" class="h1_button">
+        <h1>Welcome, {{ username }}!</h1>
+    </a>
+    <div class="header-actions">
+      <a href="{{ url_for('add_phrase') }}">フレーズ追加</a>
+      <a href="{{ url_for('logout') }}">ログアウト</a>
+    </div>
+  </header>
+
+  <!-- 検索フォーム -->
+<section id="search">
+  <form action="{{ url_for('index') }}" method="get" class="form-container">
+    <input type="text" name="q" placeholder="キーワードで絞り込む" value="{{ query }}">
+    <button type="submit">検索</button>
+  </form>
+
+  {% if query %}
+    <p>「{{ query }}」 の検索結果：{{ phrases|length }} 件</p>
+    <!-- ↓ ここを追加 ↓ -->
+    <a href="{{ url_for('index') }}" class="form-container__reset-btn">
+      ← 全件表示に戻る
+    </a>
+  {% endif %}
+</section>
+
+  <hr>
+
+  <!-- フレーズ一覧 -->
+  <section id="phrases">
+    {% for p in phrases %}
+      <div class="phrase-card">
+        <div class="category">{{ p.category }}</div>
+        <div class="text-line">{{ p.jp }}</div>
+        <div class="text-line">{{ p.en }}</div>
+        <div class="text-line">{{ p.ne }}</div>
+        {% if p.audio_filename %}
+          <audio controls src="{{ url_for('static', filename='audio/' + p.audio_filename) }}"></audio>
+        {% endif %}
+      </div>
+    {% endfor %}
+    {% if not phrases %}
+      <p>該当するフレーズがありません。</p>
+    {% endif %}
+  </section>
+</body>
+</html>

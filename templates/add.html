@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フレーズを追加</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>フレーズ追加フォーム</h1>
+        <div class="header-actions">
+            <a href="/" class="add-button">← 一覧に戻る</a>
+        </div>
+    </header>
+
+    <main>
+        <form method="POST" enctype="multipart/form-data" class="form-container">
+            <label>カテゴリ：
+                <input type="text" name="category" required>
+            </label>
+
+            <label>日本語：
+                <input type="text" name="ja" required>
+            </label>
+
+            <label>英語：
+                <input type="text" name="en">
+            </label>
+
+            <label>ネパール語：
+                <input type="text" name="ne">
+            </label>
+
+            <label>音声ファイル（任意）：
+                <input type="file" name="audio">
+            </label>
+            <p>オーディオファイルを入れなくても自動で生成されます</p>
+
+            <button type="submit" class="add-button">フレーズを保存</button>
+        </form>
+    </main>
+</body>
+</html>

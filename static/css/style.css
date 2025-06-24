@@ -1,0 +1,171 @@
+:root {
+    --dark-brown:  #6F1D1B; /* メイン文字色やタイトル */
+    --sand:        #BB9457; /* ボタンやリンクの背景 */
+    --deep-brown:  #432818; /* カードの影やボーダー */
+    --accent:      #99582A; /* ホバー時や強調 */
+    --bg-light:    #FFE6A7; /* ページ背景 */
+}
+
+/* 全体 */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1em;
+    background-color: var(--bg-light);
+    color: var(--dark-brown);
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em;
+    margin-bottom: 2em;
+    background-color: var(--sand);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.h1_button {
+    text-decoration: none;
+}
+
+header h1 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.8em;
+    color: white;
+    flex: 1 1 100%;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1em 0;
+    gap: 0.5em;
+}
+
+
+.header-actions a {
+    background-color: var(--deep-brown);
+    color: var(--bg-light);
+    font-weight: bold;
+    padding: 0.6em 1.2em;
+    margin-left: 0.5em;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+
+}
+
+.header-actions a:hover {
+    background-color: var(--accent);
+    transform: translateY(2px);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* フレーズカード */
+.phrase-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--sand);
+}
+
+.category {
+    font-weight: bold;
+    color: var(--dark-brown);
+    margin-bottom: 0.5em;
+}
+
+.text-line {
+    margin: 0.3em 0;
+}
+
+/* フォーム共通 */
+.form-container {
+    background: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 400px;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-container label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: var(--dark-brown);
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="file"] {
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border: 1px solid var(--deep-brown);
+    border-radius: 4px;
+}
+
+/* ボタン */
+.form-container button,
+.form-container input[type="submit"] {
+    background-color: var(--sand);
+    color: var(--bg-light);
+    padding: 0.7em;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.form-container button:hover,
+.form-container input[type="submit"]:hover {
+    background-color: var(--accent);
+    transform: translateY(2px);
+}
+
+/* フラッシュメッセージ */
+.flash-messages {
+    max-width: 400px;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: var(--accent);
+    color: var(--bg-light);
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+audio {
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.form-container__reset-btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--deep-brown);
+  color: var(--bg-light);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.form-container__reset-btn:hover {
+  background-color: var(--accent);
+}
