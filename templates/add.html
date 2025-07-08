@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>フレーズを追加</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
@@ -14,21 +15,27 @@
     </header>
 
     <main>
-        <form method="POST" enctype="multipart/form-data" class="form-container">
+        <form action="/add" method="POST" enctype="multipart/form-data" class="form-container">
             <label>カテゴリ：
-                <input type="text" name="category" required>
+                <select name="category">
+                      <option value="">-- 選択してください --</option>
+                      <option value="案内">案内</option>
+                      <option value="支払い">支払い</option>
+                      <option value="お礼">お礼</option>
+                      <option value="その他">その他</option>
+                </select>
             </label>
 
             <label>日本語：
-                <input type="text" name="ja" required>
+                <input type="text" name="ja" placeholder="例）おはようございます" required>
             </label>
 
             <label>英語：
-                <input type="text" name="en">
+                <input type="text" name="en" placeholder="例）Good morning">
             </label>
 
             <label>ネパール語：
-                <input type="text" name="ne">
+                <input type="text" name="ne" placeholder="例）शुभप्रभात">
             </label>
 
             <label>音声ファイル（任意）：
@@ -36,7 +43,7 @@
             </label>
             <p>オーディオファイルを入れなくても自動で生成されます</p>
 
-            <button type="submit" class="add-button">フレーズを保存</button>
+            <button type="submit" class="button-restore">フレーズを保存</button>
         </form>
     </main>
 </body>
