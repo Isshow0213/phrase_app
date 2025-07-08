@@ -1,23 +1,28 @@
-# Phrase App for Multilingual Customer Support
+# アプリ名 Multilingual Phrase App
 
-このアプリは、外国人スタッフの接客サポートを目的としたフレーズ登録・再生ツールです。Flask + SQLite を使って構築されています。
+このアプリは、外国語の接客フレーズを管理・再生できるWebアプリです。
 
-## 🔧 機能
+## 機能一覧
 
-- よく使う日本語フレーズを登録・表示
-- 多言語翻訳の表示（ネパール語など）
-- 音声再生機能（generate_audio.py）
-- カテゴリ別管理（例：案内・支払い・お礼）
+- フレーズの登録・検索・削除（論理削除）
+- お気に入り登録
+- 音声ファイル再生
+- 削除済みフレーズの復元機能
+- 30日経過後の自動削除スクリプト
 
-## 🖥️ 使用技術
+## 技術スタック
 
-- Python 3.x
-- Flask
-- SQLite
-- gTTS（Google Text-to-Speech）
+- Python / Flask
+- MySQL
+- HTML / CSS / JavaScript
+- Git / GitHub
 
-## ▶️ 実行方法
+## セットアップ方法
 
 ```bash
+git clone https://github.com/あなたの名前/あなたのリポジトリ名.git
+cd プロジェクトフォルダ
+python -m venv venv
+source venv/bin/activate  # Windowsなら venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
