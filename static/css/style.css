@@ -361,3 +361,41 @@ footer {
 .btn-restore:hover {
   background-color: #62b856;
 }
+
+.lang-select-container {
+  max-width: 500px;
+  margin: 5em auto;
+  padding: 2em;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.lang-select-container h2 {
+  margin-bottom: 1em;
+  color: var(--dark-brown);
+}
+
+.lang-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+}
+
+.lang-buttons a {
+  background-color: var(--sand);
+  color: white;
+  padding: 0.8em 1.6em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.lang-buttons a:hover {
+  background-color: var(--accent);
+  transform: translateY(2px);
+}
