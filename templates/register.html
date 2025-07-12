@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
-    <title>新規登録</title>
+    <title>{{ t["register_title"] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <h1>新規ユーザー登録</h1>
+        <h1>{{ t["register_title"] }}</h1>
     </header>
 
     <main>
@@ -24,20 +24,20 @@
 
         <form method="POST" class="form-container">
             <label>
-                ユーザー名：
+                {{ t["username"] }}：
                 <input type="text" name="username" required>
             </label>
 
             <label>
-                パスワード：
+                {{ t["password"] }}：
                 <input type="password" name="password" required>
             </label>
 
-            <button type="submit">登録</button>
+            <button type="submit">{{ t["register_button"] }}</button>
         </form>
 
         <div class="header-actions">
-            <a href="{{ url_for('login') }}">既にアカウントをお持ちの方はこちら</a>
+            <a href="{{ url_for('login') }}">{{ t["already_have_account"] }}</a>
         </div>
     </main>
 </body>

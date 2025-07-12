@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
-    <title>ログイン</title>
+    <title>{{ t['login_title'] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <h1>ログイン</h1>
+        <h1>{{ t['login_title'] }}</h1>
     </header>
 
     <main>
@@ -23,18 +23,19 @@
         {% endwith %}
 
         <form method="POST" class="form-container">
-            <label>ユーザー名：
+            <label>{{ t['username_label'] }}
                 <input type="text" name="username" required>
             </label>
 
-            <label>パスワード：
+            <label>{{ t['password_label'] }}
                 <input type="password" name="password" required>
             </label>
 
-            <button type="submit" class="add-button">ログイン</button>
+            <button type="submit" class="add-button">{{ t['login_button'] }}</button>
         </form>
+
         <div class="header-actions">
-            <a href="/register" class="add-button">新規登録</a>
+            <a href="/register" class="add-button">{{ t['register_link'] }}</a>
         </div>
     </main>
 </body>

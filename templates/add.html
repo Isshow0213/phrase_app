@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
-    <title>フレーズを追加</title>
+    <title>{{ t['add_phrase_title'] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <h1>フレーズ追加フォーム</h1>
+        <h1>{{ t['form_header'] }}</h1>
         <div class="header-actions">
-            <a href="/" class="add-button">← 一覧に戻る</a>
+            <a href="/home" class="add-button">{{ t['back_to_list'] }}</a>
         </div>
     </header>
 
     <main>
         <form action="/add" method="POST" enctype="multipart/form-data" class="form-container">
-            <label>カテゴリ：
+            <label>{{ t['category'] }}
                 <select name="category">
-                      <option value="">-- 選択してください --</option>
-                      <option value="案内">案内</option>
-                      <option value="支払い">支払い</option>
-                      <option value="お礼">お礼</option>
-                      <option value="その他">その他</option>
+                    <option value="">{{ t['select_prompt'] }}</option>
+                    <option value="案内">{{ t['guide'] }}</option>
+                    <option value="支払い">{{ t['payment'] }}</option>
+                    <option value="お礼">{{ t['thanks'] }}</option>
+                    <option value="その他">{{ t['other'] }}</option>
                 </select>
             </label>
 
-            <label>日本語：
+            <label>{{ t['jp_label'] }}
                 <input type="text" name="ja" placeholder="例）おはようございます" required>
             </label>
 
-            <label>英語：
+            <label>{{ t['en_label'] }}
                 <input type="text" name="en" placeholder="例）Good morning">
             </label>
 
-            <label>ネパール語：
+            <label>{{ t['ne_label'] }}
                 <input type="text" name="ne" placeholder="例）शुभप्रभात">
             </label>
 
-            <label>音声ファイル（任意）：
+            <label>{{ t['audio_label'] }}
                 <input type="file" name="audio">
             </label>
-            <p>オーディオファイルを入れなくても自動で生成されます</p>
+            <p>{{ t['audio_note'] }}</p>
 
-            <button type="submit" class="button-restore">フレーズを保存</button>
+            <button type="submit" class="button-restore">{{ t['submit_button'] }}</button>
         </form>
     </main>
 </body>

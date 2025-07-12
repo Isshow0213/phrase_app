@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>言語を選択してください / Please choose a language</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="lang-select-container">
+        <h2>言語を選択してください</h2>
+        <h2>भाषा चयन गर्नुहोस्</h2>
+
+        <div class="lang-buttons">
+            <a href="{{ url_for('set_language', lang_code='ja') }}">🇯🇵 日本語</a>
+            <a href="{{ url_for('set_language', lang_code='ne') }}">🇳🇵 नेपाली</a>
+        </div>
+    </div>
+</body>
+</html>

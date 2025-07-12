@@ -9,7 +9,7 @@
   <body>
     <header>
       <a href="{{ url_for('index') }}" class="h1_button">
-          <h1>Welcome, {{ username }}!</h1>
+          <h1>{{ t["welcome"] }}, {{ username }}!</h1>
       </a>
     </header>
 
@@ -26,15 +26,15 @@
     <!-- 検索フォーム -->
     <section id="search">
       <form action="{{ url_for('index') }}" method="get" class="form-container">
-        <input type="text" name="q" placeholder="キーワードで絞り込む" value="{{ query }}">
-        <button type="submit">検索</button>
+        <input type="text" name="q" placeholder="{{ t['search_placeholder'] }}" value="{{ query }}">
+        <button type="submit">{{ t['search_button'] }}</button>
       </form>
 
       {% if query %}
-        <p>「{{ query }}」 の検索結果：{{ phrases|length }} 件</p>
+        <p>{{ t['search_result'] }}</p>
         <!-- ↓ ここを追加 ↓ -->
         <a href="{{ url_for('index') }}" class="form-container__reset-btn">
-          ← 全件表示に戻る
+          {{ t['reset_search'] }}
         </a>
       {% endif %}
     </section>
@@ -123,7 +123,7 @@
             </div>
           {% endfor %}
           {% if not phrases %}
-            <p>該当するフレーズがありません。</p>
+            <p>{{ t['no_results'] }}</p>
           {% endif %}
         </section>
     </div>
@@ -132,8 +132,8 @@
   <hr>
   <footer>
     <div class="header-actions">
-      <a href="{{ url_for('add_phrase') }}">フレーズ追加</a>
-      <a href="{{ url_for('logout') }}">ログアウト</a>
+      <a href="{{ url_for('add_phrase') }}">{{ t["add_phrase"] }}</a>
+      <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
   </footer>
 </html>
